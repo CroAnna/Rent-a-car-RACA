@@ -17,6 +17,18 @@ namespace ToDoApp
             InitializeComponent();
         }
 
-      
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            FrmAddCar frmAddCar = new FrmAddCar();
+            Hide(); 
+            frmAddCar.ShowDialog(); 
+            Close();
+        }
+
+        private void FrmCars_Shown(object sender, EventArgs e)
+        {
+            DBCars.DisplayData("SELECT id_car, company, model, year, rented FROM cars", dgvCars); 
+            // stupci iz baze 
+        }
     }
 }
