@@ -37,5 +37,29 @@ namespace ToDoApp
             dgv.DataSource = tbl;
             conn.Close();
         }
+
+        public static void AddCar(Car car)
+        {
+            string sql = "INSERT INTO cars VALUES(NULL, @CarCompany, @CarModel, @CarYear, @CarRented, NULL)"; // @ protiv SQL injectiona
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add("@CarCompany", MySqlDbType.VarChar).Value = car.Company;
+            cmd.Parameters.Add("@CarModel", MySqlDbType.VarChar).Value = car.Model;
+            cmd.Parameters.Add("@CarYear", MySqlDbType.VarChar).Value = car.Year;
+            cmd.Parameters.Add("@CarRented", MySqlDbType.Bit).Value = car.Rented;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Added Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show("Car not inserted!\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conn.Close();
+        }
     }
 }

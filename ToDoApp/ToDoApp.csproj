@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
     <Compile Include="DBCars.cs" />
     <Compile Include="FrmAddCar.cs">
       <SubType>Form</SubType>

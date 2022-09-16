@@ -37,6 +37,8 @@
             this.lblYear = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblModel = new System.Windows.Forms.Label();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.txtCompany = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +78,7 @@
             // 
             this.cboCompany.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(135, 32);
+            this.cboCompany.Location = new System.Drawing.Point(135, 3);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(333, 33);
             this.cboCompany.TabIndex = 3;
@@ -84,6 +86,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.txtCompany);
             this.panel2.Controls.Add(this.txtYear);
             this.panel2.Controls.Add(this.lblYear);
             this.panel2.Controls.Add(this.txtName);
@@ -131,11 +134,33 @@
             this.lblModel.TabIndex = 4;
             this.lblModel.Text = "Model:";
             // 
+            // btnInsert
+            // 
+            this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsert.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnInsert.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.ForeColor = System.Drawing.Color.Black;
+            this.btnInsert.Location = new System.Drawing.Point(356, 378);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(139, 45);
+            this.btnInsert.TabIndex = 5;
+            this.btnInsert.Text = "Insert new car";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            // 
+            // txtCompany
+            // 
+            this.txtCompany.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompany.Location = new System.Drawing.Point(135, 42);
+            this.txtCompany.Name = "txtCompany";
+            this.txtCompany.Size = new System.Drawing.Size(333, 33);
+            this.txtCompany.TabIndex = 8;
+            // 
             // FrmAddCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 384);
+            this.ClientSize = new System.Drawing.Size(557, 435);
+            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmAddCar";
@@ -159,5 +184,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label lblYear;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.TextBox txtCompany;
     }
 }
