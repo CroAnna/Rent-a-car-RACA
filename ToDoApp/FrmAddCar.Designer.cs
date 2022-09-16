@@ -35,7 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.lblYear = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
             this.lblModel = new System.Windows.Forms.Label();
             this.btnInsert = new System.Windows.Forms.Button();
             this.txtCompany = new System.Windows.Forms.TextBox();
@@ -89,7 +89,7 @@
             this.panel2.Controls.Add(this.txtCompany);
             this.panel2.Controls.Add(this.txtYear);
             this.panel2.Controls.Add(this.lblYear);
-            this.panel2.Controls.Add(this.txtName);
+            this.panel2.Controls.Add(this.txtModel);
             this.panel2.Controls.Add(this.lblModel);
             this.panel2.Controls.Add(this.cboCompany);
             this.panel2.Controls.Add(this.lblCompany);
@@ -116,13 +116,13 @@
             this.lblYear.TabIndex = 6;
             this.lblYear.Text = "Year of manufacturing:";
             // 
-            // txtName
+            // txtModel
             // 
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(135, 89);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(333, 33);
-            this.txtName.TabIndex = 5;
+            this.txtModel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModel.Location = new System.Drawing.Point(135, 89);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(333, 33);
+            this.txtModel.TabIndex = 5;
             // 
             // lblModel
             // 
@@ -146,6 +146,7 @@
             this.btnInsert.TabIndex = 5;
             this.btnInsert.Text = "Insert new car";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // txtCompany
             // 
@@ -164,7 +165,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmAddCar";
-            this.Text = "FrmAddCar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add car";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -181,7 +183,7 @@
         private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblModel;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Button btnInsert;

@@ -40,7 +40,7 @@ namespace ToDoApp
 
         public static void AddCar(Car car)
         {
-            string sql = "INSERT INTO cars VALUES(NULL, @CarCompany, @CarModel, @CarYear, @CarRented, NULL)"; // @ protiv SQL injectiona
+            string sql = "INSERT INTO cars VALUES(NULL, @CarCompany, @CarModel, @CarYear, @CarRented)"; // @ protiv SQL injectiona
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.CommandType = CommandType.Text;

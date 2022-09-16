@@ -12,10 +12,26 @@ namespace ToDoApp
 {
     public partial class FrmAddCar : Form
     {
+        
+
         public FrmAddCar()
         {
             InitializeComponent();
         }
 
+        public void closeAndRefresh()
+        {
+            FrmCars frmCars = new FrmCars();
+            Hide();
+            frmCars.ShowDialog();
+            Close();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            Car newCar = new Car(txtCompany.Text, txtModel.Text, Int32.Parse(txtYear.Text), Convert.ToBoolean(0));
+            DBCars.AddCar(newCar);
+            closeAndRefresh();
+        }
     }
 }
