@@ -33,7 +33,6 @@
             this.lblCompany = new System.Windows.Forms.Label();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtCompany = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.lblYear = new System.Windows.Forms.Label();
             this.txtModel = new System.Windows.Forms.TextBox();
@@ -79,7 +78,7 @@
             // 
             this.cboCompany.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(135, 3);
+            this.cboCompany.Location = new System.Drawing.Point(135, 32);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(333, 33);
             this.cboCompany.TabIndex = 3;
@@ -87,7 +86,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.txtCompany);
             this.panel2.Controls.Add(this.txtYear);
             this.panel2.Controls.Add(this.lblYear);
             this.panel2.Controls.Add(this.txtModel);
@@ -98,14 +96,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(505, 214);
             this.panel2.TabIndex = 4;
-            // 
-            // txtCompany
-            // 
-            this.txtCompany.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompany.Location = new System.Drawing.Point(135, 42);
-            this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(333, 33);
-            this.txtCompany.TabIndex = 8;
             // 
             // txtYear
             // 
@@ -128,7 +118,7 @@
             // txtModel
             // 
             this.txtModel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModel.Location = new System.Drawing.Point(135, 89);
+            this.txtModel.Location = new System.Drawing.Point(135, 92);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(333, 33);
             this.txtModel.TabIndex = 5;
@@ -137,7 +127,7 @@
             // 
             this.lblModel.AutoSize = true;
             this.lblModel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModel.Location = new System.Drawing.Point(33, 92);
+            this.lblModel.Location = new System.Drawing.Point(33, 95);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(70, 25);
             this.lblModel.TabIndex = 4;
@@ -204,7 +194,6 @@
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.TextBox txtCompany;
         private System.Windows.Forms.Button btnCancel;
     }
 }
