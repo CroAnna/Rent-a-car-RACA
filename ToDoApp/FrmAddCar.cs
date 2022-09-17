@@ -38,5 +38,12 @@ namespace ToDoApp
         {
             closeAndRefresh();
         }
+
+        private void FrmAddCar_Load(object sender, EventArgs e)
+        {
+            DBCars.LoadCompanies(cboCompany);
+
+
+        }
     }
 }

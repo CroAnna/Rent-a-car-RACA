@@ -11,6 +11,7 @@ namespace ToDoApp
 {
     class DBCars
     {
+        // spajanje na bazu
         public static MySqlConnection GetConnection()
         {
             string sql = "datasource=localhost;port=3306;username=root;password=1234;database=rentappcar";
@@ -26,6 +27,7 @@ namespace ToDoApp
             return conn;
         }
 
+        // prikaz podataka u glavnoj tablici
         public static void DisplayData(string query, DataGridView dgv) 
         {
             string sql = query;
@@ -38,6 +40,21 @@ namespace ToDoApp
             conn.Close();
         }
 
+        // prikaz podataka iz baze u dropdownu
+        public static void LoadCompanies (ComboBox cbo)
+        {
+            string sql = "SELECT * FROM rentappcar.companies";
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand (sql, conn);
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cbo.Items.Add(dr.GetString("company_name"));
+            }
+        }
+
+        // insert
         public static void AddCar(Car car)
         {
             string sql = "INSERT INTO cars VALUES(NULL, @CarCompany, @CarModel, @CarYear, @CarRented)"; // @ protiv SQL injectiona
