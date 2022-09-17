@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCars));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRent = new System.Windows.Forms.Button();
@@ -45,9 +49,11 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCars)).BeginInit();
@@ -56,19 +62,63 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(942, 117);
+            this.panel1.Size = new System.Drawing.Size(890, 117);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::ToDoApp.Properties.Resources.car_2_;
+            this.pictureBox5.Location = new System.Drawing.Point(499, 37);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(54, 69);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(326, 46);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(73, 69);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(405, 13);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(88, 69);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(247, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(73, 63);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(361, 36);
+            this.lblTitle.Location = new System.Drawing.Point(28, 37);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(213, 45);
             this.lblTitle.TabIndex = 0;
@@ -80,6 +130,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnRent);
@@ -89,14 +140,29 @@
             this.panel2.Controls.Add(this.dgvCars);
             this.panel2.Location = new System.Drawing.Point(36, 153);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(871, 427);
+            this.panel2.Size = new System.Drawing.Size(819, 427);
             this.panel2.TabIndex = 1;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Location = new System.Drawing.Point(345, 359);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(139, 56);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(485, 25);
+            this.txtSearch.Location = new System.Drawing.Point(433, 25);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(312, 29);
@@ -106,7 +172,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = global::ToDoApp.Properties.Resources.minin;
-            this.pictureBox1.Location = new System.Drawing.Point(797, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(745, 25);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(46, 29);
@@ -118,8 +184,9 @@
             // 
             this.btnRent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRent.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnRent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRent.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRent.Location = new System.Drawing.Point(686, 359);
+            this.btnRent.Location = new System.Drawing.Point(634, 359);
             this.btnRent.Name = "btnRent";
             this.btnRent.Size = new System.Drawing.Size(139, 56);
             this.btnRent.TabIndex = 4;
@@ -129,10 +196,11 @@
             // btnAddNew
             // 
             this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNew.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAddNew.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNew.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNew.ForeColor = System.Drawing.Color.Black;
-            this.btnAddNew.Location = new System.Drawing.Point(541, 359);
+            this.btnAddNew.Location = new System.Drawing.Point(490, 359);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(139, 56);
             this.btnAddNew.TabIndex = 3;
@@ -179,13 +247,11 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column7,
-            this.Column5,
-            this.Column6});
+            this.Column7});
             this.dgvCars.Location = new System.Drawing.Point(33, 70);
             this.dgvCars.Name = "dgvCars";
             this.dgvCars.ReadOnly = true;
-            this.dgvCars.Size = new System.Drawing.Size(810, 274);
+            this.dgvCars.Size = new System.Drawing.Size(758, 274);
             this.dgvCars.TabIndex = 0;
             // 
             // Column1
@@ -193,66 +259,41 @@
             this.Column1.DataPropertyName = "id_car";
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "company";
             this.Column2.HeaderText = "Company";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "model";
             this.Column3.HeaderText = "Model";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "year";
             this.Column4.HeaderText = "Year of manufacturing";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "rented";
             this.Column7.HeaderText = "Rented";
             this.Column7.Name = "Column7";
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column5.HeaderText = "";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Text = "Edit";
-            this.Column5.UseColumnTextForButtonValue = true;
-            // 
-            // Column6
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.MistyRose;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.MistyRose;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column6.HeaderText = "";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Text = "Delete";
-            this.Column6.UseColumnTextForButtonValue = true;
+            this.Column7.ReadOnly = true;
             // 
             // FrmCars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 610);
+            this.ClientSize = new System.Drawing.Size(890, 610);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmCars";
@@ -261,6 +302,10 @@
             this.Shown += new System.EventHandler(this.FrmCars_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -281,13 +326,16 @@
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.CheckBox cbNotRented;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewButtonColumn Column5;
-        private System.Windows.Forms.DataGridViewButtonColumn Column6;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

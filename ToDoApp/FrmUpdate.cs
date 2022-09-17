@@ -10,11 +10,9 @@ using System.Windows.Forms;
 
 namespace ToDoApp
 {
-    public partial class FrmAddCar : Form
+    public partial class FrmUpdate : Form
     {
-        
-
-        public FrmAddCar()
+        public FrmUpdate()
         {
             InitializeComponent();
         }
@@ -27,21 +25,9 @@ namespace ToDoApp
             Close();
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-            Car newCar = new Car(cboCompany.Text, txtModel.Text, Int32.Parse(txtYear.Text), Convert.ToBoolean(0));
-            DBCars.AddCar(newCar);
-            closeAndRefresh();
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             closeAndRefresh();
-        }
-
-        private void FrmAddCar_Load(object sender, EventArgs e)
-        {
-            DBCars.LoadCompanies(cboCompany);
         }
     }
 }

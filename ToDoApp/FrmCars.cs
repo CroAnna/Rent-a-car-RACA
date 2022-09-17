@@ -30,5 +30,13 @@ namespace ToDoApp
             DBCars.DisplayData("SELECT id_car, company, model, year, rented FROM cars", dgvCars); 
             // stupci iz baze 
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            FrmUpdate frmUpdate = new FrmUpdate();
+            Hide();
+            frmUpdate.ShowDialog();
+            Close();
+        }
     }
 }
