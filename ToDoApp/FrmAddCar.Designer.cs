@@ -33,12 +33,13 @@
             this.lblCompany = new System.Windows.Forms.Label();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtCompany = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.lblYear = new System.Windows.Forms.Label();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.lblModel = new System.Windows.Forms.Label();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.txtCompany = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +99,14 @@
             this.panel2.Size = new System.Drawing.Size(505, 214);
             this.panel2.TabIndex = 4;
             // 
+            // txtCompany
+            // 
+            this.txtCompany.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompany.Location = new System.Drawing.Point(135, 42);
+            this.txtCompany.Name = "txtCompany";
+            this.txtCompany.Size = new System.Drawing.Size(333, 33);
+            this.txtCompany.TabIndex = 8;
+            // 
             // txtYear
             // 
             this.txtYear.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,19 +157,26 @@
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // txtCompany
+            // btnCancel
             // 
-            this.txtCompany.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompany.Location = new System.Drawing.Point(135, 42);
-            this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(333, 33);
-            this.txtCompany.TabIndex = 8;
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(199, 378);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(139, 45);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FrmAddCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(557, 435);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -188,5 +204,6 @@
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.TextBox txtCompany;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

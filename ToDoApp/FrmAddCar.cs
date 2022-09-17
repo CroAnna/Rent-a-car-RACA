@@ -33,5 +33,10 @@ namespace ToDoApp
             DBCars.AddCar(newCar);
             closeAndRefresh();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            closeAndRefresh();
+        }
     }
 }
