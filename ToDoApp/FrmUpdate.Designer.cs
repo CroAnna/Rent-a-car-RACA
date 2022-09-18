@@ -32,14 +32,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.cboCompanyUpdate = new System.Windows.Forms.ComboBox();
+            this.txtYearUpdate = new System.Windows.Forms.TextBox();
+            this.txtModelUpdate = new System.Windows.Forms.TextBox();
             this.lblYear = new System.Windows.Forms.Label();
             this.lblModel = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
-            this.txtModelUpdate = new System.Windows.Forms.TextBox();
-            this.txtYearUpdate = new System.Windows.Forms.TextBox();
-            this.cboCompanyUpdate = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -82,20 +83,39 @@
             this.panel2.Size = new System.Drawing.Size(608, 256);
             this.panel2.TabIndex = 3;
             // 
-            // btnCancel
+            // cboCompanyUpdate
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(338, 415);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(139, 45);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.cboCompanyUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCompanyUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCompanyUpdate.FormattingEnabled = true;
+            this.cboCompanyUpdate.Location = new System.Drawing.Point(162, 50);
+            this.cboCompanyUpdate.Name = "cboCompanyUpdate";
+            this.cboCompanyUpdate.Size = new System.Drawing.Size(394, 33);
+            this.cboCompanyUpdate.TabIndex = 12;
+            // 
+            // txtYearUpdate
+            // 
+            this.txtYearUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtYearUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYearUpdate.Location = new System.Drawing.Point(283, 171);
+            this.txtYearUpdate.Name = "txtYearUpdate";
+            this.txtYearUpdate.Size = new System.Drawing.Size(273, 33);
+            this.txtYearUpdate.TabIndex = 11;
+            // 
+            // txtModelUpdate
+            // 
+            this.txtModelUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtModelUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelUpdate.Location = new System.Drawing.Point(162, 110);
+            this.txtModelUpdate.Name = "txtModelUpdate";
+            this.txtModelUpdate.Size = new System.Drawing.Size(394, 33);
+            this.txtModelUpdate.TabIndex = 10;
             // 
             // lblYear
             // 
@@ -136,39 +156,20 @@
             this.lblCompany.TabIndex = 7;
             this.lblCompany.Text = "Company:";
             // 
-            // txtModelUpdate
+            // btnCancel
             // 
-            this.txtModelUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtModelUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelUpdate.Location = new System.Drawing.Point(162, 110);
-            this.txtModelUpdate.Name = "txtModelUpdate";
-            this.txtModelUpdate.Size = new System.Drawing.Size(394, 33);
-            this.txtModelUpdate.TabIndex = 10;
-            // 
-            // txtYearUpdate
-            // 
-            this.txtYearUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtYearUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYearUpdate.Location = new System.Drawing.Point(283, 171);
-            this.txtYearUpdate.Name = "txtYearUpdate";
-            this.txtYearUpdate.Size = new System.Drawing.Size(273, 33);
-            this.txtYearUpdate.TabIndex = 11;
-            // 
-            // cboCompanyUpdate
-            // 
-            this.cboCompanyUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboCompanyUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCompanyUpdate.FormattingEnabled = true;
-            this.cboCompanyUpdate.Location = new System.Drawing.Point(162, 50);
-            this.cboCompanyUpdate.Name = "cboCompanyUpdate";
-            this.cboCompanyUpdate.Size = new System.Drawing.Size(394, 33);
-            this.cboCompanyUpdate.TabIndex = 12;
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(338, 415);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(139, 45);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -184,11 +185,26 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.LightCoral;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Location = new System.Drawing.Point(45, 415);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(139, 45);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
             // FrmUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 472);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panel2);
@@ -218,5 +234,6 @@
         private System.Windows.Forms.TextBox txtYearUpdate;
         private System.Windows.Forms.ComboBox cboCompanyUpdate;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

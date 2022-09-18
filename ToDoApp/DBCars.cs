@@ -61,8 +61,8 @@ namespace ToDoApp
             string sql = "INSERT INTO cars VALUES(NULL, @CarCompany, @CarModel, @CarYear, @CarRented)"; // @ protiv SQL injectiona
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-
             cmd.CommandType = CommandType.Text;
+
             cmd.Parameters.Add("@CarCompany", MySqlDbType.VarChar).Value = car.Company;
             cmd.Parameters.Add("@CarModel", MySqlDbType.VarChar).Value = car.Model;
             cmd.Parameters.Add("@CarYear", MySqlDbType.VarChar).Value = car.Year;
