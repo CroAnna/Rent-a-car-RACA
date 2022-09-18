@@ -13,24 +13,23 @@ namespace ToDoApp
 {
     public partial class FrmLogin : Form
     {
-        public static User LoggedUser { get; set; }
-
+        public static User LoggedUser = null;
         public FrmLogin()
         {
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        { 
+        {
             LoggedUser = DBUsers.CheckUser(txtUsername.Text, txtPassword.Text);
-
-            MessageBox.Show(LoggedUser.Id + LoggedUser.Username + LoggedUser.Password); // ispis podataka o uspjesno logiranom useru
-
-            //????
-            FrmCars frmCars = new FrmCars();
-            Hide();
-            frmCars.ShowDialog();
-            Close();
+            if (LoggedUser != null)
+            {
+                // MessageBox.Show(LoggedUser.Id + LoggedUser.Username + LoggedUser.Password); // ispis podataka o uspjesno logiranom useru
+                FrmCars frmCars = new FrmCars();
+                Hide();
+                frmCars.ShowDialog();
+                Close();
+            }            
         }
     }
 }

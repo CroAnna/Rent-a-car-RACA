@@ -45,11 +45,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Caviar Dreams", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(295, 136);
+            this.lblTitle.Location = new System.Drawing.Point(309, 141);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(197, 33);
+            this.lblTitle.Size = new System.Drawing.Size(159, 33);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Rent App Car";
+            this.lblTitle.Text = "Rent A Car";
             // 
             // txtUsername
             // 
@@ -60,7 +60,7 @@
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(209, 204);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(370, 35);
+            this.txtUsername.Size = new System.Drawing.Size(381, 35);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
@@ -71,18 +71,20 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(209, 270);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(370, 35);
+            this.txtPassword.Size = new System.Drawing.Size(381, 35);
             this.txtPassword.TabIndex = 2;
             // 
             // lblRac
             // 
+            this.lblRac.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRac.AutoSize = true;
             this.lblRac.Font = new System.Drawing.Font("Caviar Dreams", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRac.Location = new System.Drawing.Point(251, 18);
+            this.lblRac.Location = new System.Drawing.Point(211, 18);
             this.lblRac.Name = "lblRac";
-            this.lblRac.Size = new System.Drawing.Size(292, 139);
+            this.lblRac.Size = new System.Drawing.Size(368, 139);
             this.lblRac.TabIndex = 3;
-            this.lblRac.Text = "RAC";
+            this.lblRac.Text = "RACA";
             // 
             // btnLogin
             // 
@@ -92,9 +94,9 @@
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(299, 325);
+            this.btnLogin.Location = new System.Drawing.Point(293, 325);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(191, 59);
+            this.btnLogin.Size = new System.Drawing.Size(202, 59);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -142,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(800, 433);
+            this.ClientSize = new System.Drawing.Size(811, 433);
             this.Controls.Add(this.lblRegistration);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
