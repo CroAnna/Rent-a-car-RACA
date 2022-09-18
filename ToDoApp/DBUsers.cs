@@ -31,8 +31,9 @@ namespace ToDoApp
 
             if (dr.Read())
             {
-                MessageBox.Show("Logged in!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // successful login
                 user = CreateUser(dr);
+                // MessageBox.Show("Logged in!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -42,18 +43,26 @@ namespace ToDoApp
             return user;
         }
 
+        public static User RegisterNewUser(string username, string password, string role)
+        {
+            User user = null;
+            return user;
+        }
+
         // kreiranje objekta usera 
         public static User CreateUser(MySqlDataReader dr)
         {
             int log_id = int.Parse(dr["id_users"].ToString()); // iz baze pod ""
             string log_username = dr["username"].ToString();
-            string log_password = dr["password"].ToString(); ;
+            string log_password = dr["password"].ToString();
+            string log_role = dr["role"].ToString();
 
             var user = new User
             {
                 Id = log_id,
                 Username = log_username,
-                Password = log_password
+                Password = log_password,
+                Role = log_role
             };
 
             return user;

@@ -21,15 +21,30 @@ namespace ToDoApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoggedUser = DBUsers.CheckUser(txtUsername.Text, txtPassword.Text);
-            if (LoggedUser != null)
+            if (txtUsername.Text == "" || txtPassword.Text == "")
             {
-                // MessageBox.Show(LoggedUser.Id + LoggedUser.Username + LoggedUser.Password); // ispis podataka o uspjesno logiranom useru
-                FrmCars frmCars = new FrmCars();
-                Hide();
-                frmCars.ShowDialog();
-                Close();
-            }            
+                MessageBox.Show("Please fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                LoggedUser = DBUsers.CheckUser(txtUsername.Text, txtPassword.Text);
+                if (LoggedUser != null)
+                {
+                    // MessageBox.Show(LoggedUser.Id + LoggedUser.Username + LoggedUser.Password + LoggedUser.Role); // ispis podataka o uspjesno logiranom useru
+                    FrmCars frmCars = new FrmCars();
+                    Hide();
+                    frmCars.ShowDialog();
+                    Close();
+                }
+            }         
+        }
+
+        private void lblRegistration_Click(object sender, EventArgs e)
+        {
+            FrmRegistration frmRegistration = new FrmRegistration();
+            Hide();
+            frmRegistration.ShowDialog();
+            Close();
         }
     }
 }

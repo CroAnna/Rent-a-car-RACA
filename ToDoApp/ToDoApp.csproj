@@ -90,6 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBUsers.cs" />
+    <Compile Include="FrmRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistration.Designer.cs">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCars.resx">
       <DependentUpon>FrmCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistration.resx">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdate.resx">
       <DependentUpon>FrmUpdate.cs</DependentUpon>

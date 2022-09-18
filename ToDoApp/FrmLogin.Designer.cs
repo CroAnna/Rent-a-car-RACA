@@ -138,6 +138,7 @@
             this.lblRegistration.Size = new System.Drawing.Size(144, 21);
             this.lblRegistration.TabIndex = 7;
             this.lblRegistration.Text = "New user? Register";
+            this.lblRegistration.Click += new System.EventHandler(this.lblRegistration_Click);
             // 
             // FrmLogin
             // 
