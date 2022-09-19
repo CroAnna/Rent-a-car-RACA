@@ -13,6 +13,7 @@ namespace ToDoApp
 {
     class DBUsers
     {
+        public static User user = null; // ovo bu taj logirani
 
         public static User CheckUser(string username, string password) // javna static funkcija, ali nije tipa void, nego tipa User jer vraca korisnika
         {
@@ -27,13 +28,10 @@ namespace ToDoApp
             // ExecuteReader is used for any result set with multiple rows/columns (e.g., SELECT col1, col2 from sometable ).
             // ExecuteNonQuery is typically used for SQL statements without results (e.g., UPDATE, INSERT, etc.)
 
-            User user = null; // ovo bu taj logirani
-
             if (dr.Read())
             {
                 // successful login
                 user = CreateUser(dr);
-                // MessageBox.Show("Logged in!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -45,8 +43,23 @@ namespace ToDoApp
 
         public static User RegisterNewUser(string username, string password, string role)
         {
-            User user = null;
-            return user;
+            string sql = "INSERT INTO users VALUES(NULL, @Username, @Password, @Role)";
+            MySqlConnection conn = DBCars.GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.Add("@Username", MySqlDbType.VarChar).Value = username;
+            cmd.Parameters.Add("@Password", MySqlDbType.VarChar).Value = password;
+            cmd.Parameters.Add("@Role", MySqlDbType.VarChar).Value = role;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("User not registred!\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return CheckUser(username, password);
         }
 
         // kreiranje objekta usera 
@@ -67,6 +80,5 @@ namespace ToDoApp
 
             return user;
         }
-
     }
 }

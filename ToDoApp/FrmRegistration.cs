@@ -27,7 +27,7 @@ namespace ToDoApp
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-           if(txtUsername.Text == "" || txtPassword.Text == "")
+            if(txtUsername.Text == "" || txtPassword.Text == "" || (!rbnCustomer.Checked && !rbnWorker.Checked))
             {
                 MessageBox.Show("Please fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -39,10 +39,17 @@ namespace ToDoApp
                 }
                 else
                 {
+                    string role = null;
+                    DBUsers.RegisterNewUser(txtUsername.Text, txtPassword.Text, role = rbnCustomer.Checked ? "customer" : "worker") ;
                     MessageBox.Show("Registred!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    FrmCars frmCars = new FrmCars();
+                    Hide();
+                    frmCars.ShowDialog();
+                    Close();
+
                 }
             }
-            
         }
     }
 }

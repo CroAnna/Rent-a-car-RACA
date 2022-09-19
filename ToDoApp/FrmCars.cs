@@ -27,8 +27,7 @@ namespace ToDoApp
 
         private void FrmCars_Shown(object sender, EventArgs e)
         {
-            DBCars.DisplayData("SELECT id_car, company, model, year, rented FROM cars", dgvCars); 
-            // stupci iz baze 
+            DBCars.DisplayData("SELECT id_car, company, model, year, rented FROM cars", dgvCars); // stupci iz baze 
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace ToDoApp
         // spajanje na bazu
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=1234;database=rentappcar";
+            string sql = "datasource=localhost;port=3306;username=root;password=1234;database=rentappcar"; // datasource=127.0.0.1
             MySqlConnection conn = new MySqlConnection(sql);
             try
             {
@@ -61,7 +61,7 @@ namespace ToDoApp
             string sql = "INSERT INTO cars VALUES(NULL, @CarCompany, @CarModel, @CarYear, @CarRented)"; // @ protiv SQL injectiona
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.Text; // default
 
             cmd.Parameters.Add("@CarCompany", MySqlDbType.VarChar).Value = car.Company;
             cmd.Parameters.Add("@CarModel", MySqlDbType.VarChar).Value = car.Model;
