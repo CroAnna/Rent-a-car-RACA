@@ -38,5 +38,17 @@ namespace ToDoApp
             frmUpdate.ShowDialog();
             Close();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to log out?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FrmLogin.LoggedUser = null;
+                FrmLogin frmLogin = new FrmLogin();
+                Hide();
+                frmLogin.ShowDialog();
+                Close();
+            }
+        }
     }
 }
