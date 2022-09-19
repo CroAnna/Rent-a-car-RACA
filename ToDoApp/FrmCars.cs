@@ -50,5 +50,10 @@ namespace ToDoApp
                 Close();
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DBCars.DisplayData("SELECT * FROM cars WHERE LOWER(model) LIKE LOWER('%" + txtSearch.Text + "%')", dgvCars); // case insensitive
+        }
     }
 }

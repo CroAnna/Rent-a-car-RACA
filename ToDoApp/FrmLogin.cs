@@ -19,7 +19,7 @@ namespace ToDoApp
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void login()
         {
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
@@ -36,7 +36,20 @@ namespace ToDoApp
                     frmCars.ShowDialog();
                     Close();
                 }
-            }         
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            login();
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+            }
         }
 
         private void lblRegistration_Click(object sender, EventArgs e)
@@ -46,5 +59,7 @@ namespace ToDoApp
             frmRegistration.ShowDialog();
             Close();
         }
+
+   
     }
 }
