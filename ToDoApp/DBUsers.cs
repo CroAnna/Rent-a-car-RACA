@@ -36,6 +36,7 @@ namespace ToDoApp
             else
             {
                 MessageBox.Show("Wrong information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                user = null;
             }
             conn.Close();
             return user;
