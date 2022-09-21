@@ -239,6 +239,7 @@
             this.cbNotRented.TabIndex = 2;
             this.cbNotRented.Text = "Only not rented";
             this.cbNotRented.UseVisualStyleBackColor = true;
+            this.cbNotRented.CheckedChanged += new System.EventHandler(this.cbNotRented_CheckedChanged);
             // 
             // label1
             // 

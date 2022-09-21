@@ -41,7 +41,7 @@ namespace ToDoApp
                 {
                     if(DBUsers.UsernameExists(txtUsername.Text) == true)
                     {
-                        MessageBox.Show("Username already exists!");
+                        MessageBox.Show("Username already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {

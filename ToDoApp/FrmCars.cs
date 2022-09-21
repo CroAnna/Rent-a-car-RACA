@@ -27,7 +27,7 @@ namespace ToDoApp
 
         private void FrmCars_Shown(object sender, EventArgs e)
         {
-            DBCars.DisplayData("SELECT id_car, company, model, year, rented FROM cars", dgvCars); // stupci iz baze 
+            DBCars.DisplayData("SELECT * FROM cars", dgvCars); // ili "SELECT id_car, company, model, year, rented FROM cars" --> stupci iz baze 
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -53,6 +53,20 @@ namespace ToDoApp
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             DBCars.DisplayData("SELECT * FROM cars WHERE LOWER(model) LIKE LOWER('%" + txtSearch.Text + "%')", dgvCars); // case insensitive
+        }
+
+        private void cbNotRented_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbNotRented.Checked)
+            {
+                DBCars.DisplayData("SELECT * FROM cars WHERE rented = 0", dgvCars);
+            }
+            else
+            {
+                DBCars.DisplayData("SELECT * FROM cars", dgvCars);
+            }
+            
+
         }
     }
 }
