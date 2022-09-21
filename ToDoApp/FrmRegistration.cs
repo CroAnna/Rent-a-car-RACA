@@ -39,14 +39,22 @@ namespace ToDoApp
                 }
                 else
                 {
-                    string role = null;
-                    DBUsers.RegisterNewUser(txtUsername.Text, txtPassword.Text, role = rbnCustomer.Checked ? "customer" : "worker") ;
-                    MessageBox.Show("Registred!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if(DBUsers.UsernameExists(txtUsername.Text) == true)
+                    {
+                        MessageBox.Show("Username already exists!");
+                    }
+                    else
+                    {
+                        string role = null;
+                        DBUsers.RegisterNewUser(txtUsername.Text, txtPassword.Text, role = rbnCustomer.Checked ? "customer" : "worker");
+                        MessageBox.Show("Registred!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    FrmCars frmCars = new FrmCars();
-                    Hide();
-                    frmCars.ShowDialog();
-                    Close();
+                        FrmCars frmCars = new FrmCars();
+                        Hide();
+                        frmCars.ShowDialog();
+                        Close();
+                    }
+                 
 
                 }
             }

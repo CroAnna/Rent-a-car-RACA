@@ -42,6 +42,27 @@ namespace ToDoApp
             return user;
         }
 
+        public static bool UsernameExists(string username)
+        {
+            string sql = "SELECT username FROM users WHERE username = @username ";
+            MySqlConnection conn = DBCars.GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.Add("@username", MySqlDbType.VarChar).Value = username;
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                // exists
+                conn.Close();
+                return true;
+            }
+            else
+            {
+                conn.Close();
+                return false;
+            }
+        }
+
         public static User RegisterNewUser(string username, string password, string role)
         {
             string sql = "INSERT INTO users VALUES(NULL, @Username, @Password, @Role)";
