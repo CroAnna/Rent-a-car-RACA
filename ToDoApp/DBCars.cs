@@ -79,5 +79,25 @@ namespace ToDoApp
             }
             conn.Close();
         }
+
+        // void deleteCar
+        public static void DeleteCar(int id)
+        {
+            string sql = "DELETE * FROM cars WHERE id_car = @CarID";
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandType = CommandType.Text; // using SystemData
+            cmd.Parameters.Add("@CarID", MySqlDbType.VarChar).Value = id;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Car not deleted!\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conn.Close();
+        }
     }
 }

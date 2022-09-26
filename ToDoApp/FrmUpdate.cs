@@ -15,6 +15,7 @@ namespace ToDoApp
         public FrmUpdate()
         {
             InitializeComponent();
+            DBCars.LoadCompanies(cboCompanyUpdate);
         }
 
         public void closeAndRefresh()
