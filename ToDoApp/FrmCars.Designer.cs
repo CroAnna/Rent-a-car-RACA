@@ -274,6 +274,7 @@
             this.dgvCars.ReadOnly = true;
             this.dgvCars.Size = new System.Drawing.Size(758, 274);
             this.dgvCars.TabIndex = 0;
+            this.dgvCars.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCars_CellClick);
             // 
             // Column1
             // 
@@ -284,28 +285,28 @@
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "company";
+            this.Column2.DataPropertyName = "Company";
             this.Column2.HeaderText = "Company";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "model";
+            this.Column3.DataPropertyName = "Model";
             this.Column3.HeaderText = "Model";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "year";
+            this.Column4.DataPropertyName = "Year";
             this.Column4.HeaderText = "Year of manufacturing";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column7
             // 
-            this.Column7.DataPropertyName = "rented";
+            this.Column7.DataPropertyName = "Rented";
             this.Column7.HeaderText = "Rented";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -351,13 +352,13 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column7;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnLogOut;
     }
 }
 

@@ -26,7 +26,7 @@ namespace ToDoApp
             frmCars.ShowDialog();
             Close();
         }
-
+        
         private void btnInsert_Click(object sender, EventArgs e)
         {
             Car newCar = new Car(cboCompany.Text, txtModel.Text, Int32.Parse(txtYear.Text), Convert.ToBoolean(0));

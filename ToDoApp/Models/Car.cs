@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace ToDoApp
 {
-    class Car
+    public class Car
     {
+        public string Id { get; set; } // nez jel mi ovo treba
         public string Company { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
         public bool Rented { get; set; }
-
+        
         public Car(string company, string model, int year, bool rented)
         {
             Company = company; 

@@ -12,6 +12,9 @@ namespace ToDoApp
 {
     public partial class FrmCars : Form
     {
+        Car selectedCar;
+        int selectedCarId;
+
         public FrmCars()
         {
             InitializeComponent();
@@ -32,10 +35,23 @@ namespace ToDoApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FrmUpdate frmUpdate = new FrmUpdate();
-            Hide();
-            frmUpdate.ShowDialog();
-            Close();
+            // MessageBox.Show(dgvCars.CurrentCell.ColumnIndex.ToString());
+            // string proba = dgvCars.Rows[e.RowIndex].Cells["id"].Value.ToString();
+          
+            MessageBox.Show(selectedCarId.ToString());
+            if (selectedCarId != null)
+            {
+                // MessageBox.Show(selectedCar.Model.ToString());
+            }
+            else
+            {
+
+                MessageBox.Show("prazno");
+            }
+            // FrmUpdate frmUpdate = new FrmUpdate(selectedCar);
+            // Hide();
+            // frmUpdate.ShowDialog();
+            // Close();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -67,6 +83,17 @@ namespace ToDoApp
             }
             
 
+        }
+
+        private void dgvCars_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            // MessageBox.Show(index.ToString());
+            DataGridViewRow selectedCarRow = dgvCars.Rows[index];
+            selectedCarId = (int)selectedCarRow.Cells[0].Value;
+            MessageBox.Show("id: " + selectedCarId.ToString()); // spremi se ID od odabranog auta
+
+            // Car selectedCar = new Car(selectedCarId.Cells[1].Value.ToString(), selectedCarId.Cells[2].Value.ToString(), Int32.Parse(selectedCarId.Cells[3].Value), selectedCarId.Cells[4].Value);
         }
     }
 }
