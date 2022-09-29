@@ -12,14 +12,13 @@ namespace ToDoApp
 {
     public partial class FrmUpdate : Form
     {
-        private Car newcar;
+        private Car car;
 
         public FrmUpdate(Car selectedCar)
         {
             InitializeComponent();
             DBCars.LoadCompanies(cboCompanyUpdate);
-            newcar = selectedCar;
-       
+            car = selectedCar;
         }
 
         public void closeAndRefresh()
@@ -37,7 +36,15 @@ namespace ToDoApp
 
         private void FrmUpdate_Load(object sender, EventArgs e)
         {
-            txtModelUpdate.Text = newcar.Model;
+            txtModelUpdate.Text = car.Model;
+            txtYearUpdate.Text = (car.Year).ToString();
+            cboCompanyUpdate.Text = car.Company;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DBCars.DeleteCar(car.Id);
+            closeAndRefresh();
         }
     }
 }

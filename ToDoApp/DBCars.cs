@@ -82,13 +82,13 @@ namespace ToDoApp
             }
             conn.Close();
         }
-
-        public static void UpdateCar(int id)
+        /*
+        public static Car UpdateCar(int id)
         {
             selectedCar = FindCar(id);
             MessageBox.Show(selectedCar.Model);
         }
-
+        */
         public static Car FindCar(int id)
         {
             string sql = "SELECT * FROM cars WHERE id_car = @CarID";
@@ -131,13 +131,12 @@ namespace ToDoApp
             return car;
         }
 
-        // void deleteCar
         public static void DeleteCar(int id)
         {
-            string sql = "DELETE * FROM cars WHERE id_car = @CarID";
+            string sql = "DELETE FROM cars WHERE id_car = @CarID";
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.CommandType = CommandType.Text; // using SystemData
+            // cmd.CommandType = CommandType.Text; // using SystemData
             cmd.Parameters.Add("@CarID", MySqlDbType.VarChar).Value = id;
             try
             {
