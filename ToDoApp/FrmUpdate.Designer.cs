@@ -32,6 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbRented = new System.Windows.Forms.CheckBox();
+            this.lblRented = new System.Windows.Forms.Label();
             this.cboCompanyUpdate = new System.Windows.Forms.ComboBox();
             this.txtYearUpdate = new System.Windows.Forms.TextBox();
             this.txtModelUpdate = new System.Windows.Forms.TextBox();
@@ -72,6 +74,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.cbRented);
+            this.panel2.Controls.Add(this.lblRented);
             this.panel2.Controls.Add(this.cboCompanyUpdate);
             this.panel2.Controls.Add(this.txtYearUpdate);
             this.panel2.Controls.Add(this.txtModelUpdate);
@@ -79,9 +83,35 @@
             this.panel2.Controls.Add(this.lblModel);
             this.panel2.Controls.Add(this.lblCompany);
             this.panel2.Location = new System.Drawing.Point(30, 144);
+            this.panel2.MinimumSize = new System.Drawing.Size(300, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(608, 256);
+            this.panel2.Size = new System.Drawing.Size(608, 299);
             this.panel2.TabIndex = 3;
+            // 
+            // cbRented
+            // 
+            this.cbRented.AutoSize = true;
+            this.cbRented.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbRented.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRented.Location = new System.Drawing.Point(162, 231);
+            this.cbRented.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.cbRented.Name = "cbRented";
+            this.cbRented.Size = new System.Drawing.Size(12, 11);
+            this.cbRented.TabIndex = 14;
+            this.cbRented.UseVisualStyleBackColor = true;
+            // 
+            // lblRented
+            // 
+            this.lblRented.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRented.AutoSize = true;
+            this.lblRented.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRented.Location = new System.Drawing.Point(58, 222);
+            this.lblRented.Name = "lblRented";
+            this.lblRented.Size = new System.Drawing.Size(74, 25);
+            this.lblRented.TabIndex = 13;
+            this.lblRented.Text = "Rented:";
             // 
             // cboCompanyUpdate
             // 
@@ -163,7 +193,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(338, 415);
+            this.btnCancel.Location = new System.Drawing.Point(338, 458);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(139, 45);
             this.btnCancel.TabIndex = 7;
@@ -178,7 +208,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(483, 415);
+            this.btnSave.Location = new System.Drawing.Point(483, 458);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(139, 45);
             this.btnSave.TabIndex = 8;
@@ -193,7 +223,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(45, 415);
+            this.btnDelete.Location = new System.Drawing.Point(45, 458);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(139, 45);
             this.btnDelete.TabIndex = 9;
@@ -205,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 472);
+            this.ClientSize = new System.Drawing.Size(675, 515);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
@@ -238,5 +268,7 @@
         private System.Windows.Forms.ComboBox cboCompanyUpdate;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label lblRented;
+        private System.Windows.Forms.CheckBox cbRented;
     }
 }

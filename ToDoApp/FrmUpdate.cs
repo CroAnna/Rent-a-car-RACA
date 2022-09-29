@@ -39,11 +39,12 @@ namespace ToDoApp
             txtModelUpdate.Text = car.Model;
             txtYearUpdate.Text = (car.Year).ToString();
             cboCompanyUpdate.Text = car.Company;
+            cbRented.Checked = car.Rented;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are you sure that you want to delete " + car.Company + " - " + car.Model +"?","Info", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show("Are you sure that you want to delete " + car.Company + " - " + car.Model + "?", "Info", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 DBCars.DeleteCar(car.Id);
                 closeAndRefresh();
@@ -53,7 +54,7 @@ namespace ToDoApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DBCars.UpdateCar(car.Id,  cboCompanyUpdate.Text, txtModelUpdate.Text, Int32.Parse(txtYearUpdate.Text));
+            DBCars.UpdateCar(car.Id, cboCompanyUpdate.Text, txtModelUpdate.Text, Int32.Parse(txtYearUpdate.Text), cbRented.Checked);
             closeAndRefresh();
         }
     }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -84,28 +85,32 @@ namespace ToDoApp
             conn.Close();
         }
         
-        public static void UpdateCar(int id, string company, string model, int year)
+
+        // update
+        public static void UpdateCar(int id, string company, string model, int year, bool rented)
         {
+            // MessageBox.Show(rented.ToString()); // dela
             selectedCar = FindCar(id);
-            string sql = "UPDATE cars SET company = @CarCompany, model = @CarModel, year = @CarYear WHERE id_car = @CarID";
+            string sql = "UPDATE cars SET company = @CarCompany, model = @CarModel, year = @CarYear, rented = @CarRented WHERE id_car = @CarID";
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
             cmd.Parameters.Add("@CarID", MySqlDbType.VarChar).Value = id;
             cmd.Parameters.Add("@CarCompany", MySqlDbType.VarChar).Value = company;
-            cmd.Parameters.Add("CarModel", MySqlDbType.VarChar).Value = model;
-            cmd.Parameters.Add("CarYear", MySqlDbType.VarChar).Value = year;
+            cmd.Parameters.Add("@CarModel", MySqlDbType.VarChar).Value = model;
+            cmd.Parameters.Add("@CarYear", MySqlDbType.VarChar).Value = year;
+            cmd.Parameters.Add("@CarRented", MySqlDbType.Bit).Value = rented; // Bit --> Boolean (TinyInt)
             // dodaj za rent
-
+/*
             try
-            {
+            {*/
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Updated Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            /*}
             catch (MySqlException ex)
             {
                 MessageBox.Show("Car not updated!\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
             conn.Close();
         }
         
@@ -136,27 +141,27 @@ namespace ToDoApp
             int log_id = int.Parse(dr["id_car"].ToString()); // iz baze pod ""
             string log_company = dr["company"].ToString();
             string log_model = dr["model"].ToString();
-            string log_year = dr["year"].ToString();
-            string log_rented = dr["rented"].ToString();
+            int log_year = int.Parse(dr["year"].ToString());
+            bool log_rented = Convert.ToBoolean(dr["rented"]);
 
             var car = new Car
             {
                 Id = log_id,
                 Company = log_company,
                 Model = log_model,
-                Year = Int32.Parse(log_year),
-                //Rented = Convert.ToBoolean(log_rented)
+                Year = log_year,
+                Rented = log_rented
             };
-
+ 
             return car;
         }
 
+        // delete
         public static void DeleteCar(int id)
         {
             string sql = "DELETE FROM cars WHERE id_car = @CarID";
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            // cmd.CommandType = CommandType.Text; // using SystemData
             cmd.Parameters.Add("@CarID", MySqlDbType.VarChar).Value = id;
             try
             {
