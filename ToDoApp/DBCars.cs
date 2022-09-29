@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,13 +83,32 @@ namespace ToDoApp
             }
             conn.Close();
         }
-        /*
-        public static Car UpdateCar(int id)
+        
+        public static void UpdateCar(int id, string company, string model, int year)
         {
             selectedCar = FindCar(id);
-            MessageBox.Show(selectedCar.Model);
+            string sql = "UPDATE cars SET company = @CarCompany, model = @CarModel, year = @CarYear WHERE id_car = @CarID";
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.Add("@CarID", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@CarCompany", MySqlDbType.VarChar).Value = company;
+            cmd.Parameters.Add("CarModel", MySqlDbType.VarChar).Value = model;
+            cmd.Parameters.Add("CarYear", MySqlDbType.VarChar).Value = year;
+            // dodaj za rent
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Updated Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Car not updated!\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conn.Close();
         }
-        */
+        
         public static Car FindCar(int id)
         {
             string sql = "SELECT * FROM cars WHERE id_car = @CarID";

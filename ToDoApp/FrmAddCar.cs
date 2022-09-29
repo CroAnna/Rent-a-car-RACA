@@ -12,8 +12,6 @@ namespace ToDoApp
 {
     public partial class FrmAddCar : Form
     {
-        
-
         public FrmAddCar()
         {
             InitializeComponent();
