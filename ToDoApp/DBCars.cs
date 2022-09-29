@@ -84,12 +84,31 @@ namespace ToDoApp
             }
             conn.Close();
         }
-        
+
+        // rent
+        public static void RentReturnCar(int id, bool rented)
+        {
+            string sql = "UPDATE cars SET rented = @CarRented WHERE id_car = @CarID";
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.Add("@CarID", MySqlDbType.VarChar).Value = id;
+            
+            cmd.Parameters.Add("@CarRented", MySqlDbType.Bit).Value = !rented; // Bit --> Boolean (TinyInt)
+            try
+            { 
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Rented!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Car not rented!\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conn.Close();
+        }
 
         // update
         public static void UpdateCar(int id, string company, string model, int year, bool rented)
         {
-            // MessageBox.Show(rented.ToString()); // dela
             selectedCar = FindCar(id);
             string sql = "UPDATE cars SET company = @CarCompany, model = @CarModel, year = @CarYear, rented = @CarRented WHERE id_car = @CarID";
             MySqlConnection conn = GetConnection();
@@ -100,17 +119,16 @@ namespace ToDoApp
             cmd.Parameters.Add("@CarModel", MySqlDbType.VarChar).Value = model;
             cmd.Parameters.Add("@CarYear", MySqlDbType.VarChar).Value = year;
             cmd.Parameters.Add("@CarRented", MySqlDbType.Bit).Value = rented; // Bit --> Boolean (TinyInt)
-            // dodaj za rent
-/*
+            
             try
-            {*/
+            {
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Updated Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            /*}
+            }
             catch (MySqlException ex)
             {
                 MessageBox.Show("Car not updated!\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            }
             conn.Close();
         }
         
@@ -119,7 +137,6 @@ namespace ToDoApp
             string sql = "SELECT * FROM cars WHERE id_car = @CarID";
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            // cmd.CommandType = CommandType.Text; // using SystemData
             cmd.Parameters.Add("@CarID", MySqlDbType.VarChar).Value = id;
             MySqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
@@ -137,7 +154,6 @@ namespace ToDoApp
 
         public static Car CreateCar(MySqlDataReader dr)
         {
-            // promijeni ovo
             int log_id = int.Parse(dr["id_car"].ToString()); // iz baze pod ""
             string log_company = dr["company"].ToString();
             string log_model = dr["model"].ToString();

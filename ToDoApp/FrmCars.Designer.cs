@@ -212,6 +212,7 @@
             this.btnRent.TabIndex = 4;
             this.btnRent.Text = "Rent a car";
             this.btnRent.UseVisualStyleBackColor = false;
+            this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
             // 
             // btnAddNew
             // 

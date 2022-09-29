@@ -44,12 +44,11 @@ namespace ToDoApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are you sure that you want to delete " + car.Company + " - " + car.Model + "?", "Info", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show("Are you sure that you want to delete " + car.Company + " - " + car.Model + "?", "Info", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
                 DBCars.DeleteCar(car.Id);
                 closeAndRefresh();
             }
-            
         }
 
         private void btnSave_Click(object sender, EventArgs e)

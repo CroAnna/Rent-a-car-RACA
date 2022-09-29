@@ -83,5 +83,23 @@ namespace ToDoApp
             DataGridViewRow selectedCarRow = dgvCars.Rows[index];
             selectedCarId = (int)selectedCarRow.Cells[0].Value;
         }
+
+        private void btnRent_Click(object sender, EventArgs e)
+        {
+            selectedCar = DBCars.FindCar(selectedCarId);
+            if (selectedCar.Rented == true) 
+            {
+                MessageBox.Show("Car already rented!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (MessageBox.Show("Are you sure that you want to rent " + selectedCar.Company + " - " + selectedCar.Model + "?", "Info", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            {
+                DBCars.RentReturnCar(selectedCar.Id, selectedCar.Rented);              
+
+                FrmCars frmCars = new FrmCars(); // refresh
+                Hide();
+                frmCars.ShowDialog();
+                Close();
+            }
+        }
     }
 }
