@@ -41,6 +41,7 @@ namespace ToDoApp
             MessageBox.Show(selectedCarId.ToString());
             if (selectedCarId != null)
             {
+                DBCars.UpdateCar(selectedCarId);
                 // MessageBox.Show(selectedCar.Model.ToString());
             }
             else

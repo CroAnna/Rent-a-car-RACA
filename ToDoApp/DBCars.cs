@@ -6,11 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToDoApp.Models;
 
 namespace ToDoApp
 {
     class DBCars
     {
+        public static Car selectedCar = null;
+
         // spajanje na bazu
         public static MySqlConnection GetConnection()
         {
@@ -78,6 +81,54 @@ namespace ToDoApp
                 MessageBox.Show("Car not inserted!\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             conn.Close();
+        }
+
+        public static void UpdateCar(int id)
+        {
+            selectedCar = FindCar(id);
+            MessageBox.Show(selectedCar.Model);
+        }
+
+        public static Car FindCar(int id)
+        {
+            string sql = "SELECT * FROM cars WHERE id_car = @CarID";
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            // cmd.CommandType = CommandType.Text; // using SystemData
+            cmd.Parameters.Add("@CarID", MySqlDbType.VarChar).Value = id;
+            MySqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                selectedCar = CreateCar(dr);
+            }
+            else
+            {
+                MessageBox.Show("Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                selectedCar = null;
+            }
+            conn.Close();
+            return selectedCar;
+        }
+
+        public static Car CreateCar(MySqlDataReader dr)
+        {
+            // promijeni ovo
+            int log_id = int.Parse(dr["id_car"].ToString()); // iz baze pod ""
+            string log_company = dr["company"].ToString();
+            string log_model = dr["model"].ToString();
+            string log_year = dr["year"].ToString();
+            string log_rented = dr["rented"].ToString();
+
+            var car = new Car
+            {
+                Id = log_id,
+                Company = log_company,
+                Model = log_model,
+                Year = Int32.Parse(log_year),
+                //Rented = Convert.ToBoolean(log_rented)
+            };
+
+            return car;
         }
 
         // void deleteCar
