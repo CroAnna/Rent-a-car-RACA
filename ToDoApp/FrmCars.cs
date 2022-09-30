@@ -50,7 +50,7 @@ namespace ToDoApp
         {
             if (MessageBox.Show("Are you sure you want to log out?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                FrmLogin.LoggedUser = null;
+                Program.LoggedUser = null;
                 FrmLogin frmLogin = new FrmLogin();
                 Hide();
                 frmLogin.ShowDialog();
@@ -99,6 +99,15 @@ namespace ToDoApp
                 Hide();
                 frmCars.ShowDialog();
                 Close();
+            }
+        }
+
+        private void FrmCars_Load(object sender, EventArgs e)
+        {
+            if(Program.LoggedUser.Role != "worker")
+            {
+                btnAddNew.Visible = false;
+                btnUpdate.Visible = false;
             }
         }
     }

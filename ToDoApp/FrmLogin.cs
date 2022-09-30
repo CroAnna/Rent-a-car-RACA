@@ -13,7 +13,6 @@ namespace ToDoApp
 {
     public partial class FrmLogin : Form
     {
-        public static User LoggedUser = null;
         public FrmLogin()
         {
             InitializeComponent();
@@ -27,10 +26,9 @@ namespace ToDoApp
             }
             else
             {
-                LoggedUser = DBUsers.CheckUser(txtUsername.Text, txtPassword.Text);
-                if (LoggedUser != null)
+                Program.LoggedUser = DBUsers.CheckUser(txtUsername.Text, txtPassword.Text);
+                if (Program.LoggedUser != null)
                 {
-                    // MessageBox.Show(LoggedUser.Id + LoggedUser.Username + LoggedUser.Password + LoggedUser.Role); // ispis podataka o uspjesno logiranom useru
                     FrmCars frmCars = new FrmCars();
                     Hide();
                     frmCars.ShowDialog();
@@ -59,7 +57,5 @@ namespace ToDoApp
             frmRegistration.ShowDialog();
             Close();
         }
-
-   
     }
 }

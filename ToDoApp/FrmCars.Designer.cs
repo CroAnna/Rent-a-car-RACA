@@ -322,6 +322,7 @@
             this.Name = "FrmCars";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RentAppCar";
+            this.Load += new System.EventHandler(this.FrmCars_Load);
             this.Shown += new System.EventHandler(this.FrmCars_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
