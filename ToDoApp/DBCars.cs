@@ -19,7 +19,8 @@ namespace ToDoApp
         // spajanje na bazu
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=1234;database=rentappcar"; // datasource=127.0.0.1
+            string sql = "datasource=sql11.freesqldatabase.com;port=3306;username=sql11523434;password=iE7ibaWx7w;database=sql11523434"; 
+            // string sql = "datasource=localhost;port=3306;username=root;password=1234;database=rentappcar"; // datasource=127.0.0.1
             MySqlConnection conn = new MySqlConnection(sql);
             try
             {
@@ -49,7 +50,7 @@ namespace ToDoApp
         // prikaz podataka iz baze u dropdownu
         public static void LoadCompanies (ComboBox cbo)
         {
-            string sql = "SELECT * FROM rentappcar.companies";
+            string sql = "SELECT * FROM companies";
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand (sql, conn);
 

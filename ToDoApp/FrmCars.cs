@@ -104,6 +104,7 @@ namespace ToDoApp
 
         private void FrmCars_Load(object sender, EventArgs e)
         {
+            
             if(Program.LoggedUser.Role != "worker")
             {
                 btnAddNew.Visible = false;

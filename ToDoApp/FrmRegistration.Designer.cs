@@ -106,6 +106,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(210, 282);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(381, 35);
             this.txtPassword.TabIndex = 10;
             // 
@@ -165,6 +166,7 @@
             this.txtRepeatPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRepeatPassword.Location = new System.Drawing.Point(210, 350);
             this.txtRepeatPassword.Name = "txtRepeatPassword";
+            this.txtRepeatPassword.PasswordChar = '*';
             this.txtRepeatPassword.Size = new System.Drawing.Size(381, 35);
             this.txtRepeatPassword.TabIndex = 16;
             // 
